@@ -1,0 +1,31 @@
+not to use npx
+go to https://vitejs.dev
+https://vite.dev/guide/
+
+-go to main root
+npm create vite@latest
+
+-go to clientvite terminal
+npm install
+npm run dev
+
+
+- install bootstrap
+use bootstrap cdn
+
+-install react-router-dom
+-https://www.npmjs.com/package/react-router-dom
+npm i -D react-router-dom@latest
+npm i react-router-dom
+
+install axios
+npm i axios
+$ npm install react-axios
+$ npm install axios
+$ npm install react
+$ npm install prop-types
+
+-for font awesome install all below
+npm i --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/react-fontawesome

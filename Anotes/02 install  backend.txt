@@ -1,0 +1,53 @@
+-go to backendfolder
+-create virtualenv
+virtualenv project_env
+-activate virtual
+
+
+-install django
+pip install django
+-install djangoframework
+pip install djangorestframework
+
+-create project
+django-admin startproject myproject .
+
+ pip freeze > requirements.txt
+
+
+
+python manage.py runserver
+pip install python-decouple  -> used for config('DB_NAME')
+- add this in settings
+from decouple import config
+import os
+
+
+in backend create file .env 
+
+pip install PyMySQL
+pip install cryptography
+
+- add in init
+in __init__.py main
+import pymysql
+pymysql.install_as_MySQLdb()     
+
+-- create .env
+
+-create app
+python manage.py startapp app_accounts
+
+
+
+pip install django-rest-auth
+
+pip install django-filter
+
+
+pip install django-cors-headers
+
+-django rest framework - simple jwt
+pip install djangorestframework-simplejwt
+
+pip install djangorestframework-simplejwt[crypto]
