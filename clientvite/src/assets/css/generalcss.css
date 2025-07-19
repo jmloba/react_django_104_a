@@ -1,8 +1,33 @@
-.main-container{
+body{
   background-color: antiquewhite;
   color : black;
-  margin : 2em 2em;
-  padding : 1em 1em;
-  border-radius: 10px;
+}
+#root{
+  display : flex;
+  flex-direction: column;
+  min-height:100vh;
+ 
+}
+/* .nav-bg{
+  background-color: rgb(230, 185, 185);
 
+  
+} */
+.navbar{
+  background-color: brown;
+  padding:.5em 1em;
+} 
+.navbartext{
+  color: yellow;
+}
+.Main-title{
+  color :blue;
+  font-weight: 700;
+}
+.Main-body{
+  background-color: rgb(246, 241, 241);
+  color : rgb(65, 19, 19);
+  margin :.5em 1em;
+  padding:1em 1em;
+  flex:1;
 }
