@@ -24,10 +24,10 @@ also go to bootstrap bundle-> copy to index.html
 
 -install react-router-dom
 -https://www.npmjs.com/package/react-router-dom
-npm i -D react-router-dom@latest
+
 npm i react-router-dom
 
-install axios
+-install axios
 npm i axios
 $ npm install react-axios
 $ npm install axios
@@ -36,5 +36,7 @@ $ npm install prop-types
 
 -for font awesome install all below
 npm i --save @fortawesome/fontawesome-svg-core
+
+
 npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/react-fontawesome

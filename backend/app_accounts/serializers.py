@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
   
   password = serializers.CharField(write_only = True, 
     style={'input_type':'text'},
-    min_length=4)
+    min_length=8)
   
   class Meta:
     model = User

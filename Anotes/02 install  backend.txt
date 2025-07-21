@@ -37,6 +37,7 @@ pymysql.install_as_MySQLdb()
 
 -create app
 python manage.py startapp app_accounts
+python manage.py startapp app_products
 
 
 
@@ -47,6 +48,9 @@ pip install django-filter
 
 pip install django-cors-headers
 
+
+https://www.youtube.com/watch?v=5FFqW7D5W20&t=20685s
+6:00:00  --- login install simplejwt
 -django rest framework - simple jwt
 pip install djangorestframework-simplejwt
 
