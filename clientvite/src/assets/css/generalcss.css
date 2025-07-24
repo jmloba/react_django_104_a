@@ -1,3 +1,33 @@
+*{
+  margin:0;
+  padding : 0;
+  box-sizing : border-box;
+  font-family: sans-serif ;
+   --var-light-mode :#DFD0B8;
+  --var-dark-mode :  #090040;
+
+  --var-body-data-light:white ;
+  --var-body-data-dark:rgb(233, 240, 243) ;
+
+  --var-body-data-title-light:rgb(13, 33, 185) ;
+  --var-body-data-title-dark:rgb(223, 15, 60) ;
+
+  --var-body-data-text-light:rgb(13, 33, 185) ;
+  --var-body-data-text-dark:rgb(223, 15, 60) ;
+
+  --var-card-light :#DFD0B8;
+  --var-card-dark :#5c45f7;
+  
+  --var-card-title-light :#482e04;
+  --var-card-title-dark :#f7f6fe;
+
+  
+}
+
+.container{
+  width:100vw;
+  min-height:10vh;
+}
 body{
   background-color: antiquewhite;
   color : black;
@@ -21,22 +51,85 @@ body{
   background-color: rgb(58, 55, 55);
   padding: 1em 1em ;
   border-radius: 10px;
-  
-
 }
-  
-
-
-
 .Main-title{
   color :blue;
   font-weight: 700;
 }
-.main-body{
-  background-color: rgb(246, 241, 241);
-  color : rgb(65, 19, 19);
-  margin :.5em 1em;
-  padding:1em 1em;
-  flex:1;
+
+.div-form{
+  padding : 1em 1em;
+  display: block;
+  background-color: rgb(212, 220, 227);
+}
+.form-line{
+  background-color: antiquewhite;
+  margin-bottom :.5em;
 }
 
+.book-box{
+  background-color: aqua;
+  padding : 1em 1em;
+
+}
+.book-image{
+  justify-content: center;
+  text-align: center;
+  max-width: max-content;
+  
+  
+}
+.book-box h2{
+  color :blue;
+}
+.div-cards{
+  background-color: aqua;
+  padding : 1em 1em;
+}
+.card{
+  background-color: rgb(204, 173, 173);
+  margin : .5rem .5rem;
+  border-radius: 10px;
+
+}
+.second-nav{
+  display : inline-flex;
+}
+
+.body-data.light{
+  background-color: var(--var-body-data-light);
+  
+}
+.body-data.dark{
+  background-color: var(--var-body-data-dark);
+}
+  
+
+.body-data-title.light{
+  
+   color : var(--var-body-data-title-light);  
+}
+.body-data-title.dark{
+  
+  color : var(--var-body-data-title-dark);  
+}
+.card.light{
+  background-color: var(--var-card-light);
+  display:inline-flex;
+  width : fit-content;
+
+}
+.card.dark{
+  background-color: var(--var-card-dark);
+  display:inline-flex;
+  width : fit-content;
+}
+
+.card-title.light{
+  color : var(--var-card-title-light);
+
+}
+.card-title.dark{
+  color : var(--var-card-title-dark);
+
+}

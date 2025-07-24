@@ -1,13 +1,9 @@
-import React from 'react'
+
 import {useState} from 'react'
 
-const PostAdd = () => {
 
-  /*   fields 
-  title,body, slug, 
-  banner, author
-    
-    */
+
+const PostAdd = () => {
    const [title, setTitle] = useState('')
    const [body, setBody] = useState('')
    const [slug, setSlug] = useState('')
@@ -16,19 +12,9 @@ const PostAdd = () => {
     e.preventDefault()
     const userData= {title,body,slug}
     console.log ('entered data :', userData)
-    // submit the data to backend
-    try{
-
-    }catch(error){
-
-    }
-
-
-
+   
    }
 
-
-      
   
   return (
     <>

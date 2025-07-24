@@ -17,11 +17,12 @@ const[loading,setLoading] =useState(false)
 const navigate=useNavigate()
 const [errors, setErrors]= useState('')
 
-// # get from AuthContext if loggedin
+// # get from AuthContext if loggedin  note data is wraped in curly bracket
 const {isLoggedin, setIsLoggedin} = useContext(AuthContext)
 
 const handleLogin = async(e)=>{
   e.preventDefault()
+  
 
   const userData ={username,password}
   console.log('userData -->:', userData)
@@ -40,10 +41,13 @@ const handleLogin = async(e)=>{
     
 
   }catch(error){
+    console.log('errors login :', error)
     setErrors('Invalid  Credentials')
 
     console.log('error on invalid credentials ', error  )
 
+  }finally{
+    setLoading(false)
   }
 
 

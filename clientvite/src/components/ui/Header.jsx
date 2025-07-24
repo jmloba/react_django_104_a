@@ -5,19 +5,25 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Button from '../Button';
-import { Link ,NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext} from '../AuthProvider';
 import {useNavigate } from 'react-router-dom'
+import NavLinksTutor1 from '../NavLinksTutor1';
+import Navbar2 from '../Navbar/Navbar2';
+import { useState } from 'react';
 
 
 
 const Header = () => {
   // # get from AuthContext if loggedin
-const {isLoggedin, setIsLoggedin} = useContext(AuthContext)
+
+// const [theme,setTheme] = useState('light')
+const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
+
 const navigate=useNavigate()
-const handleLogout =(e)=>{
-  e.preventDefault()
+const handleLogout =()=>{
+  
   localStorage.removeItem('accessToken')
   localStorage.removeItem('refreshToken')
   setIsLoggedin(false)
@@ -28,8 +34,7 @@ const handleLogout =(e)=>{
 
   return (
     <>
-   
-
+    <div className="">
     <nav  className='navbar  nav-bg'>
       <div className='myhomelink'>
         <Link to='/' className='navbar-brand navbartext ' >App Header</Link>
@@ -38,12 +43,12 @@ const handleLogout =(e)=>{
         {isLoggedin  ?
           (
             <div > 
-              <Link to='/add_post' className='navbar-brand navbartext ' >Add Post</Link> 
-              <Link to='/add_employee' className='navbar-brand navbartext ' >Add Employee</Link>  
-              
+              <Button text='Dashboard' class="btn-outline-info" url='/dashboard' />
               <button  text='Logout' className="btn-info" onClick={handleLogout} >Logout </button>    
+              
 
             </div>
+            
           ):
           (
             <>
@@ -56,6 +61,15 @@ const handleLogout =(e)=>{
         }
       </div>
     </nav>
+
+    <Navbar2 theme = {theme} setTheme={setTheme}/>
+
+    </div>
+    
+
+   
+   
+
     </>
     
   )

@@ -12,9 +12,10 @@ const AuthProvider = ({children}) => {
     !!localStorage.getItem('accessToken')
 
   )
+  const [theme,setTheme]=useState('light')
 
   return (
-    <AuthContext.Provider value={{isLoggedin, setIsLoggedin}}>
+    <AuthContext.Provider value={{isLoggedin, setIsLoggedin,theme ,setTheme}}>
       {children}
     </AuthContext.Provider>
     

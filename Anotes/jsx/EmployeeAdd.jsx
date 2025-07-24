@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
+
 
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+import axiosInstance from '../AxiosInstance'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
@@ -22,7 +26,7 @@ const EmployeeAdd = () => {
     console.log('entries', userData)
     try{
 
-      const response =await axios.post('http://127.0.0.1:8000/api_ViewSetsEmployees/employees/',
+      const response =await axiosInstance.post('/employees/',
         userData
       )
       console.log('response :', response.data)

@@ -9,13 +9,18 @@ import Main from './components/ui/Main'
 import Register from './components/Register'
 import Login from './components/Login'
 import Logout from './components/Logout'
-import PostAdd from './components/posts/PostAdd'
-import EmployeeAdd from './components/EmployeeAdd'
+import Books from './components/books/Books'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AuthProvider from './components/AuthProvider'
+import DashBoard from './components/dashboard/DashBoard'
+import { useState } from 'react'
 
+import './assets/css/generalcss.css' 
+import '../src/components/Navbar/Navbar2.css'
 
 function App() {
+  
+
   
 
   return (
@@ -26,12 +31,15 @@ function App() {
         <Routes>
 
           <Route path='/' element={ <Main /> }/>
+          <Route path='/books' element={ <Books/> }/>
+
           <Route path='/register' element={ <Register/> }/>
 
           <Route path='/login' element={ <Login/> }/>
           <Route path='/logout' element={ <Logout/> }/>
-          <Route path='/add_post' element={ <PostAdd/> }/>
-          <Route path='/add_employee' element={ <EmployeeAdd/> }/>
+
+
+          <Route path='/dashboard' element={ <DashBoard/> }/>
           
           
 

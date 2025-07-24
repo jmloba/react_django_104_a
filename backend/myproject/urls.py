@@ -14,7 +14,8 @@ urlpatterns = [
     
     
     path('api/posts/',include('app_posts.urls')),
-    path('api_ViewSetsEmployees/', include('api_ViewSetsEmployees.urls')),
+    
+    # path('api_ViewSetsEmployees/', include('api_ViewSetsEmployees.urls')),
 
     
 ]

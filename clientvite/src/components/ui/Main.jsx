@@ -9,7 +9,9 @@ const Main = () => {
       <h3 className='text-center Main-title'>Main Body</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut recusandae, temporibus dicta tempore quidem, eveniet voluptates dolorem eum error quasi dolor atque sunt impedit suscipit!</p>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus asperiores velit, quas ipsam vitae quam hic reprehenderit. Aliquid!</p>
-      <Button text='Login' class="btn-outline-warning" />
+        
+      <Button text='Explore Now' class="btn-outline-warning"  url='/dashboard' />
+      
       </div>
 
     </div>
