@@ -1,9 +1,11 @@
 import React from 'react'
 import {useState, useEffect } from 'react'
 import axiosInstance from '../../axiosInstance'
-import BooksCard from './BooksCard'
+
+import bookAdd from './BookAdd'
 import { useContext } from 'react';
 import { AuthContext} from '../AuthProvider'
+import {Link} from 'react-router-dom'
 
 import '../../assets/css/generalcss.css'
 
@@ -16,22 +18,24 @@ const Books = () => {
     )
   }
   const [list,setList] = useState([])
-    const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
+
+  const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
+  const config ={
+    'responseType':'blob'
+  }
 
   useEffect( ()=>{
     const fetchProtectedData= async ()=>{
       try{
-        
-        
         const response = await axiosInstance.get('/books/')
-        // -> gives 401  but instead send togeter with header
 
-        
-        console.log('dashboard try response', response.data)
+
         setList(response.data)
-  
+        console.log('response fetching the data:',response.data)
+
+
       }catch(error){
-        console.error ('\n errpr (fetchProtectedData )fetching data',error.data)
+        console.error ('\n errpr (fetchProtectedData )fetching data',error.response)
 
       }
     }
@@ -42,24 +46,47 @@ const Books = () => {
   return (
     <>
       <div className={`main-body ${theme}`}>
+        {/* from books */}
         <div className={`body-data ${theme}`}>
-
-          <div className="row justify-content-center">
+          <div className="row ">
             <h3 className={`body-data-title ${theme}`}   >Books</h3>
-            <ul className=''>
-              {
-              list.map((book) => <BooksCard key={book.id} title={book.title} cover={book.cover} />)
-              }
-            </ul>
-          </div>
-          
-          
-          
+            
+            <div className="menu_option">
+              <Link to='/books-add' className='navbar-brand   navbartext ' >Add Books</Link>   
 
+              <Link to='/books-add-yousaf' className='navbar-brand   navbartext ' >Add Book (Yousaf)</Link>   
+
+            </div>
+
+            <div className={`data-list ${theme}`}>
+              {
+              list.map((book) => {
+                return (
+                  <>
+                    <li key={book.id}>
+                    <div  className={`card ${theme} `} >
+
+                      <img className='img-books' src={book.cover} alt="cov" />
+
+                      <h4  className={`card-title ${theme}`}>
+                      </h4>  
+                      <p>Title {book.title}</p>
+                    </div>                  
+
+                </li>
+                  </>
+              
+                )
+
+              })
+              }
+
+            </div>
+
+            
+          </div>
         </div>
 
-
-        
       </div>
     
     </>

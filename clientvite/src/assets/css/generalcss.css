@@ -1,28 +1,4 @@
-*{
-  margin:0;
-  padding : 0;
-  box-sizing : border-box;
-  font-family: sans-serif ;
-   --var-light-mode :#DFD0B8;
-  --var-dark-mode :  #090040;
 
-  --var-body-data-light:white ;
-  --var-body-data-dark:rgb(233, 240, 243) ;
-
-  --var-body-data-title-light:rgb(13, 33, 185) ;
-  --var-body-data-title-dark:rgb(223, 15, 60) ;
-
-  --var-body-data-text-light:rgb(13, 33, 185) ;
-  --var-body-data-text-dark:rgb(223, 15, 60) ;
-
-  --var-card-light :#DFD0B8;
-  --var-card-dark :#5c45f7;
-  
-  --var-card-title-light :#482e04;
-  --var-card-title-dark :#f7f6fe;
-
-  
-}
 
 .container{
   width:100vw;
@@ -51,6 +27,21 @@ body{
   background-color: rgb(58, 55, 55);
   padding: 1em 1em ;
   border-radius: 10px;
+}
+
+div.main-body.light {
+  background-color : var(--var-light-mode);
+  color : var(  --var-text-light);
+  margin :.5em 1em; 
+  padding:1em 1em;
+  flex:1;
+}
+div.main-body.dark {
+  background-color : var(--var-dark-mode);
+  color : var(  --var-text-dark);
+  margin :.5em 1em; 
+  padding:1em 1em;
+  flex:1;
 }
 .Main-title{
   color :blue;
@@ -82,47 +73,148 @@ body{
 .book-box h2{
   color :blue;
 }
-.div-cards{
-  background-color: aqua;
-  padding : 1em 1em;
-}
-.card{
-  background-color: rgb(204, 173, 173);
-  margin : .5rem .5rem;
-  border-radius: 10px;
 
-}
 .second-nav{
   display : inline-flex;
 }
 
 .body-data.light{
   background-color: var(--var-body-data-light);
+  border-radius: 10px;
   
 }
+
 .body-data.dark{
   background-color: var(--var-body-data-dark);
+  border-radius: 10px;
 }
+.body-data-list.light{
+  background-color: rgb(141, 196, 206);
+  color : black;
+  display :flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+
+
+} 
+.body-data-list.darklight{
+  background-color: rgb(237, 237, 220);
+  color : black;
+
+} 
   
 
 .body-data-title.light{
-  
    color : var(--var-body-data-title-light);  
+   justify-content: center;
+   text-align: center;
+   padding: 20px 5px;
 }
 .body-data-title.dark{
+   color : var(--var-body-data-title-dark);  
+   justify-content: center;
+   text-align: center;
+   padding: 20px 5px;
+}
+.menu_option.light{
+  margin:10px 10px;
+  background-color: var(--var-light-mode);
+  padding: 1em 1em;
+  font-size: 18px;
+  font-weight: 700;
+}
+.menu_option.dark{
+  margin:10px 10px;
+  background-color: var(--var-dark-mode);
+  padding: 1em 1em;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.button-selection.light{
+  background-color: var(--var-form-bg-light);
+  padding : 1em 1em;
+}
+.button-selection.dark{
+  background-color: var(--var-form-bg-dark);
+  padding : 1em 1em;
+}
+
+.form.light{
+  background-color: var(--var-form-bg-light);
+  width :max-content;
+  padding : 1em 1em;
+  margin : auto;
+}
+.form.dark{
+  background-color: var(--var-form-bg-dark);
+  width :fit-content;
+  padding : 1em 1em;
+  margin : auto;
+}
+
+.form-radiotext.light{
+  color :var(--var-form-bg-dark);
+
   
-  color : var(--var-body-data-title-dark);  
+}
+.form-radiotext.dark{
+  color :var(--var-form-bg-light);
+    
+}
+input.radiobutton{
+  margin-left : 20px;
+  cursor : pointer;
+ width : 15px;
+}
+
+label.form-text.light{
+  color: var(--var-form-bg-dark);
+    font-size: 18px;
+}
+label.form-text.dark{
+  color: var(--var-form-bg-light);
+    font-size: 18px;
+}
+
+.card-parent{
+  background-color: aqua;
+  display: block;
+
+}
+ /* content retreived display */
+
+.data-list.light{
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.data-list.dark{
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.data-list .card .card-title{
+  color : red;
+
 }
 .card.light{
   background-color: var(--var-card-light);
-  display:inline-flex;
-  width : fit-content;
-
+  
+  width: 15em;
+  margin :10px 10px;
+  padding : 10px;
+  
 }
 .card.dark{
   background-color: var(--var-card-dark);
-  display:inline-flex;
-  width : fit-content;
+    width: 15em;
+  margin :10px 10px;
+  padding : 10px;
+  
 }
 
 .card-title.light{
@@ -131,5 +223,33 @@ body{
 }
 .card-title.dark{
   color : var(--var-card-title-dark);
+
+}
+.dummyproduct-img{
+  width: 5em;
+  margin:0 auto;
+  
+}
+
+.img-books{
+  width: 5em;
+  height: auto;
+  margin:0 auto;
+}
+.btn-group{
+  display : flex;
+  justify-content: space-between;
+}
+
+.button-update{
+  /* background-color: aqua; */
+
+}
+.button-delete{
+  /* background-color: red; */
+}
+.btn{
+  font-size: 15px;
+  width :fit-content
 
 }

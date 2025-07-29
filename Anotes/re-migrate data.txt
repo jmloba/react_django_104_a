@@ -1,0 +1,10 @@
+1. Remove the all migrations files within your project
+
+Go through each of your projects apps migration folder and remove everything inside, except the __init__.py file.
+
+2. Drop the current database, or delete the db.sqlite3 if it is your case.
+
+3. Create the initial migrations and generate the database schema:
+
+python manage.py makemigrations app_employees
+python manage.py migrate app_employees zero

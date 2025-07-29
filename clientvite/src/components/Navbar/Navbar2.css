@@ -1,10 +1,10 @@
-*{
+/* *{
   --var-light-mode :#DFD0B8;
   --var-dark-mode :  #090040;
   --var-text-light:  #090040;
   --var-text-dark:    #DFD0B8;
 
-}
+} */
 .navbar2{
   background-color: var(--var-light-mode);
   
@@ -99,19 +99,4 @@ background-color: var(--var-light-mode);
 .search-box input::placeholder{
   color: white;
 
-}
-
-div.main-body.light {
-  background-color : var(--var-light-mode);
-  color : var(  --var-text-light);
-  /* margin :.5em 1em; */
-  padding:1em 1em;
-  flex:1;
-}
-div.main-body.dark {
-  background-color : var(--var-dark-mode);
-  color : var(  --var-text-dark);
-  /* margin :.5em 1em; */
-  padding:1em 1em;
-  flex:1;
 }

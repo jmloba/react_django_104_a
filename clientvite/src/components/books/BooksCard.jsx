@@ -10,17 +10,17 @@ const BooksCard = (props) => {
 
   return (
     <>
-    <div className={`card ${theme} `}>
+    <div className={`card ${theme} `} >
 
-      <img src={props.cover} alt="cov" />
-      
-
-      
-      <h6 className={`card-item-id ${theme}`}> Book Id:{props.key}</h6>
+      <img className='img-books' src={props.cover} alt="cov" />
 
       <h4  className={`card-title ${theme}`}>
-        Book Title {props.title}
+        
+       
       </h4>  
+      <p>Title {props.title}</p>
+      
+
 
       
       

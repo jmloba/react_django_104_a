@@ -3,9 +3,9 @@ from .models import Employee
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-  list_display=('emp_id','emp_name','designation')
+  list_display=('emp_id','emp_name','designation','email','gender','department','image')
   ordering=('emp_id',)
-  list_editable =('emp_name','designation')
+  list_editable =('emp_name','designation',)
   filter_horizontal=()
   list_filter =()
   fieldsets=()

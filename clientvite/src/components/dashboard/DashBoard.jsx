@@ -37,6 +37,7 @@ const DashBoard = () => {
 
     <>
       <div className= {`main-body ${theme}`}>
+
         <h4>Dashboard</h4>
 
 {/*         
@@ -47,12 +48,23 @@ const DashBoard = () => {
         
 */}
         
-        <div className='second-nav'>
-          <NavLinksTutor1 />
-          <Link to='/books' className='navbar-brand navbartext ' >Books</Link>   
+        <div className= {`button-selection ${theme}`}>
+          {/* <NavLinksTutor1 /> */}
+          
+
           <Button text='Books' class="btn-outline-info" url='/books' />            
+          <Button text='Employees' class="btn-outline-info" url='/employees' />    
+          <Button text='DevDotCode tutorial' class="btn-outline-info" url='/devdotcode' />            
 
 
+         </div>
+
+         <div className="menu_option d-block">
+          <ul>
+            <li>
+              <Link to='/books' className='navbar-brand navbartext ' >Books</Link>   
+            </li>
+          </ul>
          </div>
 
          

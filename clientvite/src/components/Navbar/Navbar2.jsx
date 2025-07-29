@@ -11,12 +11,12 @@ import logo_dark from  '../../assets/images/logo_dark.jpg'
 import search_icon_dark from  '../../assets/images/search_dark.jpg'
 import search_icon_light from  '../../assets/images/search_light.jpg'
 import toggle_light from  '../../assets/images/moon_dark.jpg'
-import toggle_dark from  '../../assets/images/moon_light.jpg'
-
+import toggle_dark from  '../../assets/images/sun_icon.jpg'
+import '../../assets/css/generalcss.css'
 import '../Navbar/Navbar2.css'
 
 const Navbar2 = () => {
-
+ 
     // # get from AuthContext if loggedin
   const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
 
@@ -44,8 +44,11 @@ const Navbar2 = () => {
         <li className='header-text'>Login</li>
         <li className='header-text'>Logout</li>
         <li className='header-text'>Register</li>
+        
+       
 
       </ul>
+         
       <div className="search-box">
         <input type='text' 
           placeholder='Search'  />
