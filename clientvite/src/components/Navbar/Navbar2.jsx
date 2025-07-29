@@ -49,7 +49,7 @@ const Navbar2 = () => {
 
       </ul>
          
-      <div className="search-box">
+      <div  className={`search-box ${theme}`}>
         <input type='text' 
           placeholder='Search'  />
           <img className='img-search-box' 

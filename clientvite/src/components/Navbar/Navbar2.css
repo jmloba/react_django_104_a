@@ -96,7 +96,11 @@ background-color: var(--var-light-mode);
   color : var(--var-dark-mode);
 }
 
-.search-box input::placeholder{
-  color: white;
+.search-box.light input::placeholder{
+  color:var(--var-light-mode)
+
+}
+.search-box.dark input::placeholder{
+  color:var(--var-dark-mode)
 
 }

@@ -51,8 +51,11 @@ const EmployeesAdd = () => {
     const handleSaveForm = async (e)=>{
       e.preventDefault();
       console.log('values of inputs', values)
+
+      
       try{
-      const response =await axiosInstance.post('/employees/', values)
+
+      const response =await axiosInstance.post('/employees/', {values})
       console.log('response is :' ,response.data)
 
       }catch(error){

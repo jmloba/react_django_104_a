@@ -5,7 +5,7 @@ import axiosInstance from '../../axiosInstance';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
-
+import {useNavigate } from 'react-router-dom'
 
 const BookAdd = () => {
   const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
@@ -15,17 +15,13 @@ const BookAdd = () => {
   const[success,setSuccess]=useState(false)
   const [loading,setLoading] = useState(false)
   const [cover,setCover]=useState(null)
-
+  const navigate=useNavigate()
+  
   const viewdata=()=>{
     console.log('cover data', cover)
   }
   function handleImage(e){
-    console.log("files selected ", e.target.files[0])
-
-    setCover(e.target.files)
-    console.log("value of cover", cover)
-
-    
+    setCover(e.target.files[0])
   }
   
   const handleSaveBook = async (e)=>{
@@ -33,18 +29,22 @@ const BookAdd = () => {
     const formData = new FormData()
 
     formData.append('title', title)
-    // formData.append('cover', cover)
-    console.log('formData Content :',formData)
+    if (cover !== null) {
+      formData.append('cover', cover)
+    } 
     setLoading(true)
     try{
-      axiosInstance.post('/books/',formData )
-      .then((response)=>{
-            console.log('response data  added***', response.data)
-      })
+      const response = await axiosInstance.post('/books/',formData ,
+         {
+             headers: {'Content-Type':'multipart/form-data' }
+          }
+      )
+     
       
       // clear errors
       setErrors({})
       setSuccess(true)
+        navigate('/books')
 
 
     }catch(error){
@@ -81,7 +81,7 @@ const BookAdd = () => {
               <label>Select Cover(Image)</label>
               <input type="file" 
                 className="form-control form-control-lg"
-                placeholder="Cover Image"
+                
                 name="cover"
                 onChange={handleImage}
 

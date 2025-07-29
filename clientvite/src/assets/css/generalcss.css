@@ -79,13 +79,13 @@ div.main-body.dark {
 }
 
 .body-data.light{
-  background-color: var(--var-body-data-light);
+  background-color: var(--var-body-data-dark);
   border-radius: 10px;
   
 }
 
 .body-data.dark{
-  background-color: var(--var-body-data-dark);
+  background-color: var(--var-body-data-light);
   border-radius: 10px;
 }
 .body-data-list.light{
@@ -145,7 +145,7 @@ div.main-body.dark {
 .form.light{
   background-color: var(--var-form-bg-light);
   width :max-content;
-  padding : 1em 1em;
+  padding : 1em 2em;
   margin : auto;
 }
 .form.dark{
@@ -153,6 +153,10 @@ div.main-body.dark {
   width :fit-content;
   padding : 1em 1em;
   margin : auto;
+}
+.form .row{
+  margin-bottom: .5em;
+  padding : 0 1.5em;
 }
 
 .form-radiotext.light{
@@ -196,7 +200,13 @@ label.form-text.dark{
   flex-wrap: wrap;
   justify-content: center;
 }
-
+.employee-card-image {
+  display:flex;
+  margin : auto;
+}
+.employee-card-image img{
+  width : 10em;
+}
 .data-list .card .card-title{
   color : red;
 
@@ -250,6 +260,17 @@ label.form-text.dark{
 }
 .btn{
   font-size: 15px;
-  width :fit-content
 
+}
+.card button.btn.btn-danger{
+  font-size: 15px;
+  width: 3em;
+
+}
+.form-data.light{
+  background-color: var(--var-body-data-light);
+}
+.form-control{
+  display:fflex;
+  justify-content:space-evenly
 }

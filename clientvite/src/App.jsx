@@ -9,12 +9,12 @@ import Main from './components/ui/Main'
 
 import Books from './components/books/Books'
 import BookAdd from './components/books/BookAdd'
-import BookAdd_yousaf from './components/books/BookAdd_yousaf'
+
 
 import Employees from './components/employees/Employees'
-import EmployeesAdd from './components/employees/EmployeesAdd'
 
-import EmployeesAdd2 from './components/employees/EmployeesAdd2'
+
+import EmployeeAddGreatAdib from './components/employees/EmployeeAddGreatAdib'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Register from './components/Register'
@@ -43,16 +43,17 @@ function App() {
           <Route path='/' element={ <Main /> }/>
           <Route path='/books' element={ <Books/> }/>
           <Route path='/books-add' element={ <BookAdd/> }/>
-          <Route path='/books-add-yousaf' element={ <BookAdd_yousaf/> }/>
+          
 
           <Route path='/devdotcode' element={ <DevDotCodeMain/> }/>
           <Route path='/devdotcode-add' element={ <DevDotCodeAdd/> }/>
 
 
           <Route path='/employees' element={ <Employees/> }/>
-          <Route path='/employees-add' element={ <EmployeesAdd/> }/>
+          
 
-          <Route path='/employees-add2' element={ <EmployeesAdd2/> }/>
+          
+          <Route path='/employees-add3' element={ <EmployeeAddGreatAdib/> }/>
 
 
           <Route path='/register' element={ <Register/> }/>

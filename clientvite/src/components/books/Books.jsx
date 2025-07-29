@@ -6,6 +6,7 @@ import bookAdd from './BookAdd'
 import { useContext } from 'react';
 import { AuthContext} from '../AuthProvider'
 import {Link} from 'react-router-dom'
+import Button from '../Button';
 
 import '../../assets/css/generalcss.css'
 
@@ -23,6 +24,22 @@ const Books = () => {
   const config ={
     'responseType':'blob'
   }
+  const handleDelete= async (id)=>{
+      
+      console.log('delete pressed', id)
+      try{
+        const post = await axiosInstance.delete(`/books/${id}/`)
+        console.log('respose post :',post)
+        setList(list.filter( (p)=> p.id !==id  ))
+
+
+
+      }catch(error){
+        console.log(error)
+      }
+
+
+    }
 
   useEffect( ()=>{
     const fetchProtectedData= async ()=>{
@@ -52,10 +69,9 @@ const Books = () => {
             <h3 className={`body-data-title ${theme}`}   >Books</h3>
             
             <div className="menu_option">
-              <Link to='/books-add' className='navbar-brand   navbartext ' >Add Books</Link>   
-
-              <Link to='/books-add-yousaf' className='navbar-brand   navbartext ' >Add Book (Yousaf)</Link>   
-
+              <Button text='Add Books' 
+              class=" btn-outline-primary" 
+                url='/books-add' /> 
             </div>
 
             <div className={`data-list ${theme}`}>
@@ -71,7 +87,11 @@ const Books = () => {
                       <h4  className={`card-title ${theme}`}>
                       </h4>  
                       <p>Title {book.title}</p>
-                    </div>                  
+                                    <div className='btn-group'>
+                    <button className='btn btn-danger ' onClick={()=>handleDelete(book.id)}> Delete</button>
+                  </div>
+                    </div>         
+                             
 
                 </li>
                   </>
