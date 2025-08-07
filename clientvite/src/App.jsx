@@ -13,6 +13,7 @@ import Employees from './components/employees/Employees'
 
 
 import EmployeeAddGreatAdib from './components/employees/EmployeeAddGreatAdib'
+import EmployeesTable from './components/employees/EmployeesTable'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Register from './components/Register'
@@ -31,9 +32,12 @@ import '../src/components/Navbar/Navbar2.css'
 import Task from './components/task/Task'
 import Task_add from './components/task/Task_add'
 import TaskReview from './components/task/TaskReview'
+import axiosInstance from './axiosInstance'
 
 
 function App() {
+
+  
   return (
     <>
     <AuthProvider>
@@ -51,6 +55,7 @@ function App() {
           <Route path='/dashboard' element={ <DashBoard/> }/>
 
           <Route path='/employees' element={ <Employees/> }/>
+          <Route path='/employees_table' element={ <EmployeesTable/> }/>
           
 
           

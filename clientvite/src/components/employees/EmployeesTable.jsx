@@ -1,5 +1,6 @@
 import React from 'react'
-import { useContext, useState , useEffect, } from 'react';
+import './employees.css'
+import { useMemo,useContext, useState , useEffect, } from 'react';
 import { AuthContext} from '../AuthProvider'
 import Button from '../Button';
 import {Link} from 'react-router-dom'
@@ -7,14 +8,22 @@ import axiosInstance from '../../axiosInstance';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useNavigate } from 'react-router-dom'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
-import './employees.css'
 
 
-const Employees = () => {
+import { emptablecolumns } from '../tables/EmployeeTableColumns';
+import {useTable} from 'react-table'
+
+
+
+
+const EmployeesTable = () => {
   const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
   const [showSearch, setShowSearch] = useState(true)
   const [showSearchArea, setShowSearchArea]=useState('noshow')
   const navigate=useNavigate()
+  
+
+  
 
   const toggle_search = ()=>{
     setShowSearch(!showSearch) 
@@ -23,12 +32,9 @@ const Employees = () => {
     }else{
       setShowSearchArea('noshow')
     }
-
     console.log('showsearch',showSearch)
-        
   }
-    
-//list= data fetched  from employee api
+  // list of employee from api
   const [list,setList] = useState([])
 
   const [errors,setErrors] = useState({})
@@ -48,14 +54,9 @@ const Employees = () => {
     // http://localhost:8000/api/v1/employees/?designation=doctor&emp_name=
     //http://127.0.0.1:8000/api/v1/employees/?q=prog
     try{
-
-
       // const response =  await axiosInstance.get(`/employees/?designation=${textSearch}`)
-
       const response =  await axiosInstance.get(`/employees/?q=${textSearch}`)
-      
       setList(response.data)
-
     }catch(error){
       console.log(error)
 
@@ -94,9 +95,8 @@ const Employees = () => {
         console.log(error)
       }
     }
-    
-  useEffect(()=>{
-      const fetchProtectedData = async ()=>{
+ 
+  const fetchProtectedData = async ()=>{
       try{
         const response = await axiosInstance.get('/employees/')
         
@@ -106,27 +106,41 @@ const Employees = () => {
         console.error ('\n errpr (fetchProtectedData )fetching data',error.response)
 
       }
-      }
+      }    
+
+  useEffect(()=>{
       fetchProtectedData()
+      
     },[])
 
-    
+  // const columns = useMemo( ()=> emptablecolumns,[])
+    // const data = useMemo( list)
   
+  
+  
+
+
+
+
+
   return (
     <>
     <div className='employees'>
-    <div className={`main-body ${theme}`}>
-      <div className={`body-data ${theme}`}>
-
-        <h2>Employee List</h2>
-
-        <div className={`menu_option ${theme}`}>
+      <div className={`main-body ${theme}`}>
+          <h2>Display employee by table</h2>
+      </div>
+      <div className={`menu_option ${theme}`}>
           <Button text='Dashboard' class=" btn-outline-primary" url='/dashboard' />                   
+ 
+          
           <Button text='Add Employee by GreatAdib' 
           class="btn-outline-primary" url='/employees-add3' />
+
           <button className='btn' onClick={toggle_search}> Show Search</button>
-        </div>
-        <div className={`search-area ${showSearchArea}`}>
+
+      </div>
+      {/* search area   */}
+      <div className={`search-area ${showSearchArea}`}>
           <div className="search1">
             <input type="text" name='searchtext' value={textSearch} onChange={(e)=>setTextSearch(e.target.value)}/>
             <button type='button' className='btn' onClick={handleSearch}>Search by Name/Designation</button>
@@ -144,55 +158,56 @@ const Employees = () => {
             <button type='button' className='btn' onClick={handleSearchEmpno}>Search by Emp Id</button>
 
           </div>
-        </div>
+      </div>
+      {/* end--->search area   */}
+      {/* to display the list */}
+      <div className={`data-list ${theme}`}>
+       <table className='table table-hover table-striped table-success'>
+                    <thead className='table-dark'>
+                        <tr>
+                            <th>id</th>
+                            <th>emp_id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Department</th>
 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            list.map((employee, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{index}</td>
+                                        <td>{employee.emp_id}</td>
+                                        <td>{employee.emp_name}</td>
+                                        <td>{employee.email}</td>
+                                        <td>{employee.gender}</td>
+                                        <td>{employee.department}</td>
+                                        <td>{employee.designation}</td>
+                                        <td>
+                                          <button type='btn btn-outline-danger'>Delete</button>
+                                        </td>
 
-        {/* to display the list */}
-        <div className={`data-list ${theme}`}>
-          {
+                                    </tr>
 
-            list.map((employee) => {
-              return (
-                
-                
-                <li key={employee.id} className=
-                {`card ${theme} `}>
-                  <div className='employee-card-image'>
-                    <img src={employee.image} alt="" />
-
-                  </div>
-                  <p>Employee Id: {employee.emp_id}</p>
-                  <p>Name : {employee.emp_name}</p>
-                  <p>Designation : {employee.designation}</p>
-                  <p>Email : {employee.email}</p>
-
-                  <div className='btn-group'>
-                    <button className='btn btn-danger ' onClick={()=>handleDelete(employee.id)}> Delete</button>
-                  </div>
-                  
-
-                </li>
-
-                
-
-              )
-            }
-
-            )
-
-            
-
-          }
-
-        </div>
+                                )
+                            })
+                        }
+                    </tbody>
+                </table>
         
       </div>
-
+   
     </div>
 
-    </div>
+
+    
+    
     </>
+    
   )
 }
 
-export default Employees
+export default EmployeesTable

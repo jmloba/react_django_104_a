@@ -42,10 +42,14 @@ const DashBoard = () => {
         <div className= {`button-selection ${theme} ` }>
           {/* <NavLinksTutor1 /> */}
           <Button text='Books' class="btn-outline-info" url='/books' />            
-          <Button text='Employees' class="btn-outline-info" url='/employees' />    
+          <Button text='Employees' class="btn-outline-info" url='/employees' />  
+
+          <Button text='Employees(Table)' class="btn-outline-info " url='/employees_table' /> 
+
+
           <Button text='DevDotCode tutorial' class="btn-outline-info" url='/devdotcode' />            
 
-  <Button text='Task' class="btn-outline-info" url='/task' />    
+          <Button text='Task' class="btn-outline-info" url='/task' />    
           {/*         <Button text='Task Reviews' class="btn-outline-info" url='/task-review' />     */}
 
 
