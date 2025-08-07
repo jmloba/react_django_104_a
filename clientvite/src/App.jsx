@@ -9,8 +9,6 @@ import Main from './components/ui/Main'
 
 import Books from './components/books/Books'
 import BookAdd from './components/books/BookAdd'
-
-
 import Employees from './components/employees/Employees'
 
 
@@ -30,6 +28,9 @@ import { useState } from 'react'
 
 import './assets/css/generalcss.css' 
 import '../src/components/Navbar/Navbar2.css'
+import Task from './components/task/Task'
+import Task_add from './components/task/Task_add'
+import TaskReview from './components/task/TaskReview'
 
 
 function App() {
@@ -47,7 +48,7 @@ function App() {
 
           <Route path='/devdotcode' element={ <DevDotCodeMain/> }/>
           <Route path='/devdotcode-add' element={ <DevDotCodeAdd/> }/>
-
+          <Route path='/dashboard' element={ <DashBoard/> }/>
 
           <Route path='/employees' element={ <Employees/> }/>
           
@@ -57,15 +58,18 @@ function App() {
 
 
           <Route path='/register' element={ <Register/> }/>
+          <Route path='/sign-up' element={ <Register/> }/>
 
           <Route path='/login' element={ <Login/> }/>
           <Route path='/logout' element={ <Logout/> }/>
 
 
-          <Route path='/dashboard' element={ <DashBoard/> }/>
+          <Route path='/task' element={ <Task/> }/>
+          
+          <Route path='/task-add' element={ <Task_add/> }/>
           
           
-
+        <Route path='/task-review' element={ <TaskReview/> }/>
 
         </Routes>
       <Footer/>  

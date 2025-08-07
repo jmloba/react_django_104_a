@@ -1,0 +1,27 @@
+.employees{
+  background-color: brown;
+}
+.employees .search-area{
+  background-color: rgb(202, 170, 232);
+  padding :1rem 1rem;
+  border-radius: 30px;
+}
+.employees .menu_option{
+  background-color: aqua;
+  border-radius: 7px;
+  display:flex;
+  justify-content: space-between;
+  
+
+}
+
+.employees .search-area.show{
+  display:flex;
+  justify-content: space-between;
+} 
+.employees .search-area.noshow{
+  display:none;
+} 
+.employes .search-area .search-input{
+  display :block;
+}

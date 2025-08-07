@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'app_api',
     'app_products',
     'app_posts',
+    'app_task',
     'app_employees',
     'api_ViewSetsEmployees',
 ]

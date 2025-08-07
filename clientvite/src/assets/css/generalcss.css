@@ -260,7 +260,22 @@ label.form-text.dark{
 }
 .btn{
   font-size: 15px;
+  padding : 8px 20px;
+  border-radius: 4px;
+  outline: none;
+  border :none;
+  color : #ffff;
+  cursor : pointer;
+  background-color:var(--primary) ;
 
+}
+.btn:hover{
+  background-color: rgb(119, 187, 147);
+  padding : 6px 10px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  outline: auto;
+  border :none;
 }
 .card button.btn.btn-danger{
   font-size: 15px;

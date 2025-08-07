@@ -1,8 +1,11 @@
 *{
+  box-sizing: border-box;
   margin:0;
   padding : 0;
+
   box-sizing : border-box;
-  font-family: sans-serif ;
+  font-family: 'PT Sans',sans-serif ;
+  --primary : rgb(13, 13, 243);
    --var-light-mode :#DFD0B8;
   --var-dark-mode :  #504B38;
 
@@ -31,5 +34,7 @@
 
   --var-form-text-light:var(--var-light-mode );
   --var-form-text-dark:var(--var-dark-mode );
+
+  --navbar3-header-shadow : 7px 5px 15px -3px rgb(173, 15, 15), 0 4px 6px -2px blue;
   
 }

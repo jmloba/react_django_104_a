@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
 
+
 const EmployeeAddGreatAdib = () => {
   const {isLoggedin, setIsLoggedin,theme,setTheme} = useContext(AuthContext)
   const [loading,setLoading] = useState(false)
@@ -157,6 +158,7 @@ const EmployeeAddGreatAdib = () => {
                     onChange={(e)=>setDepartment(e.target.value)} 
                   />
                 </div>
+
               
                 {/* image */}
                 <div className="row">
@@ -166,6 +168,11 @@ const EmployeeAddGreatAdib = () => {
                     // multiple
                     onChange={(e)=>setImage(e.target.files[0])} 
                   />
+                </div>
+
+                <div className="row">
+                  {/* <CustomSelectDepartment /> */}
+                  
                 </div>
               </div>
 

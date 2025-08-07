@@ -1,12 +1,16 @@
 import React from 'react'
 import { useContext, useState } from 'react';
 import { AuthContext} from '../AuthProvider'
+
+import CustomSelectDepartment  from '../customselect/CustomSelectDepartment'
+
 import {Link} from 'react-router-dom'
 import axiosInstance from '../../axiosInstance';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
+import CustomSelectDepartment from '../customselect/CustomSelectDepartment';
 
 
 const EmployeesAdd = () => {
@@ -40,7 +44,7 @@ const EmployeesAdd = () => {
         email:'',
         gender: '',
         department:'',
-        // empPhoto:''
+        empPhoto:null
 
       })
 
@@ -55,7 +59,7 @@ const EmployeesAdd = () => {
       
       try{
 
-      const response =await axiosInstance.post('/employees/', {values})
+      const response =await axiosInstance.post('/employees/', values)
       console.log('response is :' ,response.data)
 
       }catch(error){
@@ -165,6 +169,7 @@ const EmployeesAdd = () => {
                 <option value="wholesale">Wholesale</option>
               </select>
             </div>
+            
 
 
 
