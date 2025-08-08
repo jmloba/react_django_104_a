@@ -151,11 +151,11 @@ const Employees = () => {
         <div className={`data-list ${theme}`}>
           {
 
-            list.map((employee) => {
+            list.map((employee,index) => {
               return (
                 
                 
-                <li key={employee.id} className=
+                <li key={index.id} className=
                 {`card ${theme} `}>
                   <div className='employee-card-image'>
                     <img src={employee.image} alt="" />

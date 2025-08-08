@@ -1,0 +1,11 @@
+.data-list.light{
+  background-color: var(--var-light-mode);
+  display : block;
+}
+.data-list.dark{
+  background-color: var(--var-dark-mode);
+  display : block;
+}
+.add-form{
+  background-color: rgb(193, 148, 90);
+}

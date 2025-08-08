@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app_accounts',
     'app_api',
     'app_products',
+    'app_projects',
     'app_posts',
     'app_task',
     'app_employees',

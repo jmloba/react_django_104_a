@@ -17,6 +17,7 @@ import EmployeesTable from './components/employees/EmployeesTable'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Register from './components/Register'
+import App_project from './components/app_projects/App_project'
 
 import DevDotCodeMain from './components/devdotcode/DevDotCodeMain'
 import DevDotCodeAdd from './components/devdotcode/DevDotCodeAdd'
@@ -46,6 +47,8 @@ function App() {
         <Routes>
 
           <Route path='/' element={ <Main /> }/>
+          <Route path='/app_project' element={ <App_project/> }/>
+          
           <Route path='/books' element={ <Books/> }/>
           <Route path='/books-add' element={ <BookAdd/> }/>
           

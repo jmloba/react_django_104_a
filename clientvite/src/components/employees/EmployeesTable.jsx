@@ -163,40 +163,40 @@ const EmployeesTable = () => {
       {/* to display the list */}
       <div className={`data-list ${theme}`}>
        <table className='table table-hover table-striped table-success'>
-                    <thead className='table-dark'>
-                        <tr>
-                            <th>id</th>
-                            <th>emp_id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Gender</th>
-                            <th>Department</th>
+          <thead className='table-dark'>
+            <tr>
+              <th>id</th>
+              <th>emp_id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Department</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            list.map((employee, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{index}</td>
-                                        <td>{employee.emp_id}</td>
-                                        <td>{employee.emp_name}</td>
-                                        <td>{employee.email}</td>
-                                        <td>{employee.gender}</td>
-                                        <td>{employee.department}</td>
-                                        <td>{employee.designation}</td>
-                                        <td>
-                                          <button type='btn btn-outline-danger'>Delete</button>
-                                        </td>
+            </tr>
+          </thead>
+          <tbody>
+            {
+            list.map((employee, index) => {
+              return (
+                <tr key={index}>
+                  <td>{index}</td>
+                  <td>{employee.emp_id}</td>
+                  <td>{employee.emp_name}</td>
+                  <td>{employee.email}</td>
+                  <td>{employee.gender}</td>
+                  <td>{employee.department}</td>
+                  <td>{employee.designation}</td>
+                  <td>
+                    <button type='btn btn-outline-danger'>Delete</button>
+                  </td>
 
-                                    </tr>
+                </tr>
 
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>
+            )
+            })
+            }
+          </tbody>
+        </table>
         
       </div>
    

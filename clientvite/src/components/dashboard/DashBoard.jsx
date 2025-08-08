@@ -50,6 +50,8 @@ const DashBoard = () => {
           <Button text='DevDotCode tutorial' class="btn-outline-info" url='/devdotcode' />            
 
           <Button text='Task' class="btn-outline-info" url='/task' />    
+          <Button text='ProjectApp' class="btn-outline-info" url='/app_project' />    
+
           {/*         <Button text='Task Reviews' class="btn-outline-info" url='/task-review' />     */}
 
 
