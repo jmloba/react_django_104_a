@@ -35,6 +35,8 @@ import Task_add from './components/task/Task_add'
 import TaskReview from './components/task/TaskReview'
 import axiosInstance from './axiosInstance'
 
+import RestrictDefinedDates from './components/reusable_components/RestrictDefinedDates'
+
 
 function App() {
 
@@ -77,7 +79,11 @@ function App() {
           <Route path='/task-add' element={ <Task_add/> }/>
           
           
-        <Route path='/task-review' element={ <TaskReview/> }/>
+          <Route path='/task-review' element={ <TaskReview/> }/>
+
+          {/* dates */}
+          <Route path='/datepicker-restricted-dates' element={ <RestrictDefinedDates/> }/>
+
 
         </Routes>
       <Footer/>  

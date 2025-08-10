@@ -3,9 +3,9 @@ from .models import Project, ProjectManager
 
 
 class ProjectAdmin(admin.ModelAdmin):
-  list_display=('name','projectmanager','start_date','end_date','comments','created','modified')
+  list_display=('name','projectmanager','start_date','end_date','comments','status','created','modified')
   ordering=('name',)
-  list_editable =('projectmanager','start_date','end_date','comments')
+  list_editable =('projectmanager','start_date','end_date','comments','status')
   filter_horizontal=()
   list_filter =()
   fieldsets=()

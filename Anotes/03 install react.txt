@@ -1,3 +1,6 @@
+eresolve install add --legacy-peer-deps
+note : npm install react-datepicker --legacy-peer-deps
+
 not to use npx
 go to https://vitejs.dev
 https://vite.dev/guide/

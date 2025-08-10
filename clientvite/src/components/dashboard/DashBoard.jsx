@@ -57,13 +57,10 @@ const DashBoard = () => {
 
          </div>
 
-         {/* <div className="menu_option d-block">
-          <ul>
-            <li>
-              <Link to='/books' className='navbar-brand navbartext ' >Books</Link>   
-            </li>
-          </ul>
-         </div> */}
+          <div className= {`button-selection ${theme} ` }>
+            <h3>Dates</h3>
+            <Button text='restricted dates' class="btn-outline-info" url='/datepicker-restricted-dates' />            
+          </div>
 
          
 

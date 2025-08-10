@@ -17,10 +17,10 @@ class Project(models.Model):
   projectmanager =models.ForeignKey(ProjectManager,on_delete=models.CASCADE, blank=True, null=True)
   
    
-  start_date = models.DateField()
-  end_date = models.DateTimeField()
+  start_date = models.DateField( blank=True, null=True)
+  end_date = models.DateField( blank=True, null=True)
   comments = models.CharField(max_length=500, blank=True, null = True)
-  status = models.CharField(max_length=100)
+  status = models.CharField(max_length=100, blank=True, null=True)
   created = models.DateTimeField(auto_now_add=True)
   modified =models.DateTimeField(auto_now=True)
   def __str__(self):
