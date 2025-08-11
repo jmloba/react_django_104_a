@@ -1,0 +1,32 @@
+
+
+.inputWrapper{
+  background-color: rgb(206, 190, 74);
+  padding : 10px 10px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.inputField{
+  color : rgb(32, 8, 8);
+  width : 100%;
+  padding :10px;
+  border : 1px solid blue;
+}
+.inputError{
+  background-color: antiquewhite;
+
+  border-color: yellow;
+}
+.inputIcon
+{
+  position : abolute;
+  top: 50%;
+  left:10px;
+  transform : translate(-50%);
+  pointer-events: none;
+}
+.errorText{
+  color : yellow;
+  font-size: 14px;
+  margin-top: 4x;
+}

@@ -9,6 +9,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import {useNavigate } from 'react-router-dom'
+import Input from '../reusable_components/input/Input';
 
 
 const EmployeeAddGreatAdib = () => {
@@ -24,6 +25,26 @@ const EmployeeAddGreatAdib = () => {
   const [department,setDepartment] = useState('')
   const [image,setImage] = useState(null)
 
+
+// to be used in reusable component
+  const [email2,setEmail2]=useState('')
+  const [ emailError,setEmailError] =useState('')
+
+  const handleEmailChange= (e)=>{
+    setEmail2(e.target.value)
+    setEmailError(validateEmail(e.target.value)? '':'Invalid email')
+
+  }
+  const handleCancelButton =()=>{
+    setEmail2('')
+  }
+  const handleSubmitButton =()=>{
+    alert(`email is ${email2}`)
+  }
+  const validateEmail = (email)=>{
+      return /\$+@\$+/.test(email)
+  }
+//-----
   const handleReset =()=> {
     setEmpid(''),
     setEmpName(''),
@@ -97,6 +118,29 @@ const EmployeeAddGreatAdib = () => {
           <div className="menu_option">
             <Button text='Employee List' class="btn-outline-primary" url='/employees' /> 
           </div>
+
+{/* ----  sample to call reusable input =========  */}
+          <div className="input-flex">
+            <form className={`form ${theme}`}>
+            
+              <Input 
+               type='email'
+               placeholder='Enter email'
+               value={email2}
+
+               
+               errorMessage={emailError}
+               customStyles={{width: '300px'}}
+               onChange={handleEmailChange}
+
+              />   
+              <button onClick={handleSubmitButton}>submit</button>
+
+            </form>
+          </div>
+{/* ⇈⇈⇈  ---- sample to call reusable input =========  */}
+
+
           <form className={`form ${theme}`} onSubmit={handleSaveForm}>
             <div className={`form-data ${theme}`} >
               <div className="form-group form-control">

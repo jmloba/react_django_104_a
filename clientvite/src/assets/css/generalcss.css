@@ -132,13 +132,25 @@ div.main-body.dark {
   font-weight: 700;
 }
 
+.button-selection{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+.button-selection a.btn{
+  margin-right: 1rem;
+  margin-top:.5rem
+}
 
 .button-selection.light{
-  background-color: var(--var-form-bg-light);
+  background-color: var(--var-light-mode);
   padding : 1em 1em;
+  
 }
 .button-selection.dark{
-  background-color: var(--var-form-bg-dark);
+  background-color: var(--var-dark-mode);
   padding : 1em 1em;
 }
 
@@ -288,4 +300,16 @@ label.form-text.dark{
 .form-control{
   display:fflex;
   justify-content:space-evenly
+}
+.date-selecteddate{
+  background-color: aquamarine;
+  color:coral;
+}
+.sample-form{
+  background-color: aqua;
+  width:fit-content;
+}
+.inputFlex{
+  display : flex;
+  justify-content: center;
 }

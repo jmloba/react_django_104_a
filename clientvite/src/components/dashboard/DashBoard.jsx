@@ -38,8 +38,10 @@ const DashBoard = () => {
     <>
       <div className= {`dashboard main-body ${theme}`}>
 
-        <h4>Dashboard</h4>
-        <div className= {`button-selection ${theme} ` }>
+        
+        <div className="button-group">
+          <h4>Dashboard</h4>
+          <div className= {`button-selection ${theme} ` }>
           {/* <NavLinksTutor1 /> */}
           <Button text='Books' class="btn-outline-info" url='/books' />            
           <Button text='Employees' class="btn-outline-info" url='/employees' />  
@@ -55,12 +57,34 @@ const DashBoard = () => {
           {/*         <Button text='Task Reviews' class="btn-outline-info" url='/task-review' />     */}
 
 
-         </div>
-
-          <div className= {`button-selection ${theme} ` }>
-            <h3>Dates</h3>
-            <Button text='restricted dates' class="btn-outline-info" url='/datepicker-restricted-dates' />            
           </div>
+        </div>
+
+        {/* sample for reusable component */}
+        <div className="button-group">
+            
+            <Button text='reusable Sample1' class="btn-outline-info" url='/reusable-passing-props' />   
+        </div>
+
+
+        {/* datepicker */}
+        <div className="button-group">
+          <h3>Dates</h3>
+          <div className= {`button-selection ${theme} ` }>
+            
+            <Button text='restricted dates' class="btn-outline-info" url='/datepicker-restricted-dates' />   
+
+            <Button text='datepicker scrollable month' 
+            class="btn-outline-info" url='/datepicker-scrollable-month' />            
+
+            <Button text='datepicker daterange' 
+            class="btn-outline-info" url='/datepicker-daterange' />       
+          </div>
+
+        </div>
+
+
+
 
          
 

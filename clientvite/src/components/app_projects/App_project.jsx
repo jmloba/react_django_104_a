@@ -32,10 +32,10 @@ const App_project = () => {
     setShowProjectAdd(!showProjectAdd)
     setShowProjectManagerAdd(false)
   }
-
+  // list
   const [projectManagers,setProjectManagers] = useState([])
   const [projects,setProjects] = useState([])
-    const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(false)
 
   const handleProjectDel= async(id)=>{
     try{
@@ -122,6 +122,7 @@ const App_project = () => {
                   <th>Project Mgr</th>
                   <th>StartDate</th>
                   <th>EndDate</th>
+                  
                   <th>Comments</th>
                   <th>status</th>
 
@@ -139,6 +140,7 @@ const App_project = () => {
                       <td>{project.projectmanager}</td>
                       <td>{project.start_date}</td>
                       <td>{project.end_date}</td>
+                      
                       <td>{project.comments}</td>
                       <td>{project.status}</td>
                       
@@ -155,7 +157,7 @@ const App_project = () => {
             </table>
               
             </div>
-                {showProjectAdd? <AppProjectAdd /> : ''}
+                {showProjectAdd? <AppProjectAdd project_managers={projectManagers}/> : ''}
 
           </div>
         

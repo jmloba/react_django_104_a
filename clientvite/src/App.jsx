@@ -36,6 +36,9 @@ import TaskReview from './components/task/TaskReview'
 import axiosInstance from './axiosInstance'
 
 import RestrictDefinedDates from './components/reusable_components/RestrictDefinedDates'
+import ReactDatePickerScrollableMonth from './components/reusable_components/ReactDatePickerScrollableMonth'
+import ReactDatePickerRange from './components/reusable_components/ReactDatePickerRange'
+import PassingProps from './components/reusable_components/samples/PassingProps'
 
 
 function App() {
@@ -83,6 +86,16 @@ function App() {
 
           {/* dates */}
           <Route path='/datepicker-restricted-dates' element={ <RestrictDefinedDates/> }/>
+          
+          <Route path='/datepicker-scrollable-month' element={ <ReactDatePickerScrollableMonth/> }/>
+          <Route path='/datepicker-daterange' element={ <ReactDatePickerRange/> }/>
+
+          <Route path='/datepicker-daterange' element={ <ReactDatePickerRange/> }/>
+
+          {/* REUSABLE */}
+          <Route path='/reusable-passing-props' element={ <PassingProps/> }/>
+
+
 
 
         </Routes>

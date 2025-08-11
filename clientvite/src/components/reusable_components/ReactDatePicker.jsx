@@ -35,7 +35,7 @@ const ReactDatePicker = () => {
     onChange={handleDateChange}
     // dateFormat="dd/MM/yyyy; hh:mm"
     dateFormat="dd/MM/yyyy"
-    date
+    
     // minDate={min_date}
     // maxDate={max_date}
 

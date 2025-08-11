@@ -45,7 +45,8 @@ const Navbar2 = () => {
     <div className={`navbar2 ${theme}`} >
       <img 
         src={ theme =='light'?logo_light:logo_dark } 
-        alt="" className='img-logo'/>
+        alt="navbar logo" className='img-logo'/>
+
       <ul className='d-inline-flex '>
 
         <li className='header-text'>Home</li>
