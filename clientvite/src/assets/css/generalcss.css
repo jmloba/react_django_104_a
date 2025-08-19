@@ -204,7 +204,8 @@ label.form-text.dark{
 
 .data-list.light{
   display : flex;
-  flex-wrap: wrap;
+  
+
   justify-content: center;
 }
 .data-list.dark{
@@ -218,6 +219,9 @@ label.form-text.dark{
 }
 .employee-card-image img{
   width : 10em;
+}
+.data-list{
+  display: flex;
 }
 .data-list .card .card-title{
   color : red;
@@ -263,13 +267,7 @@ label.form-text.dark{
   justify-content: space-between;
 }
 
-.button-update{
-  /* background-color: aqua; */
 
-}
-.button-delete{
-  /* background-color: red; */
-}
 .btn{
   font-size: 15px;
   padding : 8px 20px;
@@ -312,4 +310,7 @@ label.form-text.dark{
 .inputFlex{
   display : flex;
   justify-content: center;
+}
+.row.image{
+  background-color: beige;
 }

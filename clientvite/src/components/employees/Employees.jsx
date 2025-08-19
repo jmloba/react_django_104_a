@@ -124,8 +124,18 @@ const Employees = () => {
           <Button text='Dashboard' class=" btn-outline-primary" url='/dashboard' />                   
           <Button text='Add Employee by GreatAdib' 
           class="btn-outline-primary" url='/employees-add3' />
+
+          <Button text='Employee Add 2' 
+          class="btn-outline-primary" url='/employees-add2' />
+
+          {/* to use form proper;u in empadd3  */}
+          <Button text='Employee Add 4 ' 
+          class="btn-outline-primary" url='/employees-add4' />
+
           <button className='btn' onClick={toggle_search}> Show Search</button>
         </div>
+
+
         <div className={`search-area ${showSearchArea}`}>
           <div className="search1">
             <input type="text" name='searchtext' value={textSearch} onChange={(e)=>setTextSearch(e.target.value)}/>
@@ -155,7 +165,7 @@ const Employees = () => {
               return (
                 
                 
-                <li key={index.id} className=
+                <li key={employee.id} className=
                 {`card ${theme} `}>
                   <div className='employee-card-image'>
                     <img src={employee.image} alt="" />

@@ -6,7 +6,7 @@ const Input = ({ type,
    customStyles, icon
 }) => {
   return (
-   <div  classname='inputWrapper' style={customStyles} >
+   <div  className='inputWrapper' style={customStyles} >
       {icon && <span className='inputIcon' >{icon} </span>}
 
       <input type={type}

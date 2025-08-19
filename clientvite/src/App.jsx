@@ -13,6 +13,9 @@ import Employees from './components/employees/Employees'
 
 
 import EmployeeAddGreatAdib from './components/employees/EmployeeAddGreatAdib'
+import EmployeeAdd2 from './components/employees/EmployeeAdd2'
+import EmployeeAdd4 from './components/employees/EmployeeAdd4'
+
 import EmployeesTable from './components/employees/EmployeesTable'
 import Login from './components/Login'
 import Logout from './components/Logout'
@@ -66,8 +69,10 @@ function App() {
           <Route path='/employees_table' element={ <EmployeesTable/> }/>
           
 
-          
           <Route path='/employees-add3' element={ <EmployeeAddGreatAdib/> }/>
+
+          <Route path='/employees-add2' element={ <EmployeeAdd2/> }/>
+          <Route path='/employees-add4' element={ <EmployeeAdd4/> }/>
 
 
           <Route path='/register' element={ <Register/> }/>
