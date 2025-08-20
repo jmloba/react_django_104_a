@@ -109,7 +109,7 @@ const App_project = () => {
           <div className={`table-div  ${theme}`}>
             <div className="table-div-sub">
               <h2>Projects</h2>
-                 <button type='button' className='btn btn-outline-primary' onClick={handleAddProject}  >Add Project </button>
+              <button type='button' className='btn btn-outline-primary' onClick={handleAddProject}  >Add Project </button>
 
             </div>
             <div className="table-div-sub">

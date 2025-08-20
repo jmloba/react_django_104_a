@@ -5,7 +5,7 @@
 
   box-sizing : border-box;
   font-family: 'PT Sans',sans-serif ;
-  --primary : rgb(13, 13, 243);
+  --primary : #1888ff;
    --var-light-mode :#DFD0B8;
   --var-dark-mode :  #504B38;
 

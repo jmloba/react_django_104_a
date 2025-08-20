@@ -274,18 +274,21 @@ label.form-text.dark{
   border-radius: 4px;
   outline: none;
   border :none;
-  color : #ffff;
+  color : white;
   cursor : pointer;
   background-color:var(--primary) ;
 
 }
 .btn:hover{
-  background-color: rgb(119, 187, 147);
   padding : 6px 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
+
+  background-color: rgb(17, 141, 17);
+  color :rgb(227, 227, 152);
+
   border-radius: 4px;
-  outline: auto;
-  border :none;
+  /* outline: auto; */
+  border : 1px solid var(--primary);
 }
 .card button.btn.btn-danger{
   font-size: 15px;

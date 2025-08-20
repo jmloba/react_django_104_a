@@ -8,7 +8,8 @@ import { AuthContext} from '../AuthProvider';
 import {useNavigate } from 'react-router-dom'
 
 // import '../Navbar/Navbar2.css'
-import '../Navbar/Navbar3.css'
+import '../Navbar3Design/Navbar3.css'
+
 import {menuItemsData} from './MenuItemsData'
 import MenuItems from './MenuItems';
 

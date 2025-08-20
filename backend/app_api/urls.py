@@ -2,6 +2,8 @@ from django.urls import path, include
 from app_accounts import views as UserView
 
 from api_ViewSetsEmployees import views as Employee_Viewset
+
+
 from app_task import views as Task_Viewset 
 
 from app_api import views as Book_ViewSet
@@ -18,6 +20,9 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 
 router.register('employees', Employee_Viewset.EmployeeViewset, basename='employee')
+
+router.register('department', Employee_Viewset.DepartmentViewset, basename='department')
+
 router.register('books', Book_ViewSet.BookViewSet, basename='book')
 router.register('Task', Task_Viewset.Task_ViewSet, basename='task')
 router.register('Review', Task_Viewset.TaskReview_ViewSet, basename='review')

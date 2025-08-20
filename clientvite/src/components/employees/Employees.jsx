@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useNavigate } from 'react-router-dom'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import './employees.css'
+import DepartmentAdd from './DepartmentAdd';
 
 
 const Employees = () => {
@@ -30,9 +31,12 @@ const Employees = () => {
     
 //list= data fetched  from employee api
   const [list,setList] = useState([])
+  const [departments,setDepartments] = useState([])
+  const [showAddDepartment,setShowAddDepartment] = useState(false)
 
   const [errors,setErrors] = useState({})
   const [success,setSuccess] = useState(false)
+  const [showDepartmentAdd,setShowDepartmentAdd]= useState(false)
 
   const [empnoFrom,setEmpnoFrom] = useState('')
   const [empnoTo,setEmpnoTo] = useState('')
@@ -84,26 +88,35 @@ const Employees = () => {
 
 
   }
-  const handleDelete= async (id)=>{
+  const handleDeptDelete= async (id)=>{
       console.log('delete pressed', id)
       try{
-        const post = await axiosInstance.delete(`/employees/${id}/`)
+        const post = await axiosInstance.delete(`/department/${id}/`)
         console.log('response post :',post)
-        setList(list.filter( (p)=> p.id !==id  ))
+        setDepartments(departments.filter( (p)=> p.id !==id  ))
       }catch(error){
         console.log(error)
       }
     }
+
+  const handleAddDepartment = ()=>{
+    setShowDepartmentAdd(!showDepartmentAdd)
+
+  }  
     
   useEffect(()=>{
       const fetchProtectedData = async ()=>{
       try{
         const response = await axiosInstance.get('/employees/')
-        
         setList(response.data)
         console.log('response fetching employee  data:',response.data)
+
+        const res_dept = await axiosInstance.get('/department/')
+        setDepartments(res_dept.data)
+        console.log ('departments',departments)
+
       }catch(error){
-        console.error ('\n errpr (fetchProtectedData )fetching data',error.response)
+        console.error ('\n error (fetchProtectedData )fetching data',error.response)
 
       }
       }
@@ -116,9 +129,55 @@ const Employees = () => {
     <>
     <div className='employees'>
     <div className={`main-body ${theme}`}>
+      {/* body data department list */}
+      <div className={`body-data ${theme}`}>
+        <div className="table-div-sub">
+          <h4>Department</h4>
+          <button type='button' className='btn btn-outline-primary' onClick={handleAddDepartment}  >Add Departmentxxx </button>
+
+        </div>
+        {showDepartmentAdd?<DepartmentAdd departments={departments} setDepartments={setDepartments} setShowDepartmentAdd={setShowDepartmentAdd}/>:''}
+        
+        
+        <div className="table-div-sub">
+            <table className='table table-hover table-striped table-success'>
+              <thead className='table-dark'>
+                <tr>
+                  <th>index</th>
+                  <th>Dept id</th>
+                  <th>Department Name</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                departments.map((department, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{index}</td>
+                      <td>{department.id}</td>
+                      <td>{department.deptname}</td>
+                      
+                      
+                      <td>
+                        <button type='button' className='btn btn-outline-danger' onClick={()=>handleDeptDelete(department.id)} >Delete</button>
+                      </td>
+
+                    </tr>
+
+                )
+                })
+                }
+              </tbody>
+            </table>
+        </div>
+        
+
+      </div>
+      {/* body data employee list */}
       <div className={`body-data ${theme}`}>
 
-        <h2>Employee List</h2>
+        <h4>Employee List</h4>
 
         <div className={`menu_option ${theme}`}>
           <Button text='Dashboard' class=" btn-outline-primary" url='/dashboard' />                   

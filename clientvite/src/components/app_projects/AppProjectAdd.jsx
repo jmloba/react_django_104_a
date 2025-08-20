@@ -119,9 +119,10 @@ const AppProjectAdd = (props) => {
       <form className={`form ${theme}`}  onSubmit={handleSaveForm}>
         <div className="form-data">
           <div className="form-group form-control">
-              <div className="row">
-                <label className={`form-text ${theme} `} htmlFor="name">Name</label>
+              <div className="row ">
+                <label className={`form-text  ${theme} `} htmlFor="name">Name</label>
                 <input type="text" 
+                className='form-control'
                 name='name' 
                 id='name'
                 
@@ -132,6 +133,7 @@ const AppProjectAdd = (props) => {
               <div className="row">
                 <label className={`form-text ${theme} `} htmlFor="comment">Comment</label>
                 <input type="text" 
+                  className='form-control'
                 id='comment'
                 name='comment' 
                 value={comment}
@@ -141,6 +143,7 @@ const AppProjectAdd = (props) => {
               <div className="row">
                 <label className={`form-text ${theme} `} htmlFor="status">Status</label>
                 <input type="text" 
+                  className='form-control'
                 name='status' 
                 id='status'
                 value={status}
@@ -150,6 +153,7 @@ const AppProjectAdd = (props) => {
               {/* date picker */}
               <div className="row">
                 <DatePicker
+                  className='form-control'
                 selected={startDate}
                 onChange={handleStartDateChange}
                 dateFormat="dd/MM/yyyy"
@@ -157,12 +161,13 @@ const AppProjectAdd = (props) => {
               </div>
               <div className="row">
                 <DatePicker
+                  className='form-control'
                 selected={endDate}
                 onChange={handleEndDateChange}
                 dateFormat="dd/MM/yyyy"
                 />
               </div>
-              <div className="row">
+              <div className="row   ">
                 <DropDownPManagers list={props.project_managers} 
                 setSelectedManagerId={setSelectedManagerId}/>
 

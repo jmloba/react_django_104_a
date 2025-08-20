@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 
 import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
@@ -13,9 +14,15 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext} from '../AuthProvider';
 import {useNavigate } from 'react-router-dom'
+
 import Navbar2 from '../Navbar/Navbar2';
-import Navbar3 from '../Navbar/Navbar3'
+
+
+import Navbar3 from '../Navbar3Design/Navbar3'
+
+
 import Navbar4 from '../Navbar4/Navbar4'
+
 import NavbarOrig from '../Navbar/NavbarOrig';
 
 
@@ -40,10 +47,12 @@ const handleLogout =()=>{
   return (
     <>
     <div className="my-nav">
+      
       <NavbarOrig/>
       <Navbar2 theme = {theme} setTheme={setTheme}/>
       {/* <Navbar3 /> */}
-      <Navbar4 />
+      {/* <Navbar4 /> */}
+      
 
      
     </div>

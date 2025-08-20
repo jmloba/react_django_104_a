@@ -15,8 +15,7 @@ class Project(models.Model):
   name = models.CharField(unique=True, max_length=100)
   # to link to foreignkey
   projectmanager =models.ForeignKey(ProjectManager,on_delete=models.CASCADE, blank=True, null=True)
-  
-   
+ 
   start_date = models.DateField( blank=True, null=True)
   end_date = models.DateField( blank=True, null=True)
   comments = models.CharField(max_length=500, blank=True, null = True)

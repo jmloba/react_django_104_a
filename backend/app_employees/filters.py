@@ -1,7 +1,20 @@
 import django_filters
 from django.db.models import Q
-from .models import Employee
+from .models import Employee, Department
 #----- second sample  search on multiple fields
+
+class DepartmentFilter(django_filters.FilterSet):
+  q = django_filters.CharFilter(method='my_dept_filter', label="Search")
+  class Meta:
+    model = Department
+    fields=['q']
+      
+  def my_dept_filter(self, queryset, name, value):
+        return queryset.filter(
+            Q(deptname__icontains=value) 
+        )  
+    
+    
 
 class EmployeeFilter(django_filters.FilterSet):
   q = django_filters.CharFilter(method='my_custom_filter', label="Search")
