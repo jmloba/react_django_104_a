@@ -34,7 +34,8 @@ class EmployeeFilter(django_filters.FilterSet):
   def my_custom_filter(self, queryset, name, value):
         return queryset.filter(
             Q(emp_name__icontains=value) |
-            Q(designation__icontains=value)  
+            Q(designation__icontains=value)  |
+            Q(email__icontains=value)  
             
         )
         

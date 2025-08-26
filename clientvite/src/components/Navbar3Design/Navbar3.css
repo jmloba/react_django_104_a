@@ -3,6 +3,8 @@ header{
 }
 .navbar3{
   margin-top: 3px;
+  display :flex;
+  justify-content: space-between;
   
 }
 
@@ -44,7 +46,7 @@ margin-right : 50px;
   margin-left: 10px;
 }
 .navbar3 .menus{
-  background-color: coral;
+  /* background-color: coral; */
   display : flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +56,10 @@ margin-right : 50px;
 .navbar3 .menu-items{
   font-size: 18px;
   position:relative;
+  
 }
+
+
 .navbar3 .menu-items a{
   display: block;
   font-size: inherit;
@@ -66,8 +71,8 @@ margin-right : 50px;
 .navbar3 .menu-items button{
   display : flex;
   align-items: center;
-  /* background-color: transparent; */
-  background-color: aqua;
+  background-color: transparent;
+  /* background-color: aqua; */
   color : inherit;
   font-size: inherit;
   border : none;
@@ -75,6 +80,11 @@ margin-right : 50px;
   width: 100%;
   padding:0.5rem 0;
 
+}
+.navbar3 .menu-items button:hover,
+.navbar3 .menu-items a:hover{
+  background-color: aquamarine;
+  width: 100%;
 }
 .navbar3 .dropdown{
   position : absolute;

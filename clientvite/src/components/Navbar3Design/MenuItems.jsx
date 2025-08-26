@@ -1,14 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Dropdown from './dropdown'
 import {useState, useEffect, useRef} from 'react'
 
+
 const MenuItems = ( {items, depthLevel} ) => {
   const [dropdown, setDropdown] = useState(false)
-
-
   let ref = useRef()
   useEffect( ()=>{
-    // 
     const handler = (event)=>{
       if (dropdown && ref.current  && !ref.current.contains(event.target)){
         setDropdown(false)
@@ -34,7 +33,8 @@ const MenuItems = ( {items, depthLevel} ) => {
 
 
   return (
-   <li className='menu-items' ref={ref} 
+    <>
+    <li key={items.id} className='menu-items' ref={ref} 
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       >
@@ -46,31 +46,26 @@ const MenuItems = ( {items, depthLevel} ) => {
         aria-haspopup ='menu'  
         aria-expanded = {dropdown?"true": "false" }
         onClick={ ()=>setDropdown((prev)=>!prev) } 
-      
          >
           {items.title} {''}
-          
           {
           depthLevel >0 ?
             <span> &raquo;</span>
             :<span className='arrow'></span>
           }
-
-
       </button>
-        
         <Dropdown submenus={items.submenu} dropdown={dropdown} depthLevel={depthLevel} />
       </>
       
     ):(
       // no submenu
-      <a href="/#">{items.title}</a>
-
-
+      <a href={items.url}>{items.title}</a>
     )
     }
     
    </li>
+    </>
+   
   )
 }
 

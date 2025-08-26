@@ -24,6 +24,7 @@ import App_project from './components/app_projects/App_project'
 
 import DevDotCodeMain from './components/devdotcode/DevDotCodeMain'
 import DevDotCodeAdd from './components/devdotcode/DevDotCodeAdd'
+import Department from './components/department/Department'
 
 
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
@@ -64,6 +65,7 @@ function App() {
           <Route path='/devdotcode' element={ <DevDotCodeMain/> }/>
           <Route path='/devdotcode-add' element={ <DevDotCodeAdd/> }/>
           <Route path='/dashboard' element={ <DashBoard/> }/>
+          <Route path='/department' element={ <Department/> }/>
 
           <Route path='/employees' element={ <Employees/> }/>
           <Route path='/employees_table' element={ <EmployeesTable/> }/>

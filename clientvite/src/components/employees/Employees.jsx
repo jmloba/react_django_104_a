@@ -9,6 +9,7 @@ import {useNavigate } from 'react-router-dom'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import './employees.css'
 import DepartmentAdd from './DepartmentAdd';
+import EmployeeAdd5 from './EmployeeAdd5';
 
 
 const Employees = () => {
@@ -33,6 +34,7 @@ const Employees = () => {
   const [list,setList] = useState([])
   const [departments,setDepartments] = useState([])
   const [showAddDepartment,setShowAddDepartment] = useState(false)
+  const [showEmployeeAdd,setShowEmployeeAdd] = useState(false)
 
   const [errors,setErrors] = useState({})
   const [success,setSuccess] = useState(false)
@@ -41,6 +43,9 @@ const Employees = () => {
   const [empnoFrom,setEmpnoFrom] = useState('')
   const [empnoTo,setEmpnoTo] = useState('')
   const [textSearch,setTextSearch] = useState('')
+  const toggleEmployeeAdd =()=>{
+    setShowEmployeeAdd(!showEmployeeAdd)
+  }
 
 
   const handleSearch = async (e)=>{
@@ -98,7 +103,16 @@ const Employees = () => {
         console.log(error)
       }
     }
-
+  const handleDelete= async (id)=>{
+      console.log('delete pressed', id)
+      try{
+        const post = await axiosInstance.delete(`/employees/${id}/`)
+        console.log('response post :',post)
+        setList(list.filter( (p)=> p.id !==id  ))
+      }catch(error){
+        console.log(error)
+      }
+    }
   const handleAddDepartment = ()=>{
     setShowDepartmentAdd(!showDepartmentAdd)
 
@@ -133,7 +147,7 @@ const Employees = () => {
       <div className={`body-data ${theme}`}>
         <div className="table-div-sub">
           <h4>Department</h4>
-          <button type='button' className='btn btn-outline-primary' onClick={handleAddDepartment}  >Add Departmentxxx </button>
+          <button type='button' className='btn btn-outline-primary' onClick={handleAddDepartment}  >{showDepartmentAdd?'Close Add Routine':'Add Department'} </button>
 
         </div>
         {showDepartmentAdd?<DepartmentAdd departments={departments} setDepartments={setDepartments} setShowDepartmentAdd={setShowDepartmentAdd}/>:''}
@@ -181,17 +195,16 @@ const Employees = () => {
 
         <div className={`menu_option ${theme}`}>
           <Button text='Dashboard' class=" btn-outline-primary" url='/dashboard' />                   
-          <Button text='Add Employee by GreatAdib' 
-          class="btn-outline-primary" url='/employees-add3' />
+          {/* <Button text='Add Employee by GreatAdib' 
+          class="btn-outline-primary" url='/employees-add3' /> */}
 
-          <Button text='Employee Add 2' 
-          class="btn-outline-primary" url='/employees-add2' />
+          {/* <Button text='Employee Add 2'  class="btn-outline-primary" url='/employees-add2' /> */}
 
           {/* to use form proper;u in empadd3  */}
-          <Button text='Employee Add 4 ' 
-          class="btn-outline-primary" url='/employees-add4' />
-
+          {/* <Button text='Employee Add 4 '  class="btn-outline-primary" url='/employees-add4' /> */}
+          <button className='btn' onClick={toggleEmployeeAdd}> Add Employee</button>
           <button className='btn' onClick={toggle_search}> Show Search</button>
+
         </div>
 
 
@@ -214,21 +227,19 @@ const Employees = () => {
 
           </div>
         </div>
-
+        {showEmployeeAdd ? 
+          <EmployeeAdd5 setShowEmployeeAdd={setShowEmployeeAdd} setList={setList} departments={departments}/>
+          :''}
 
         {/* to display the list */}
         <div className={`data-list ${theme}`}>
           {
-
             list.map((employee,index) => {
               return (
-                
-                
                 <li key={employee.id} className=
                 {`card ${theme} `}>
                   <div className='employee-card-image'>
                     <img src={employee.image} alt="" />
-
                   </div>
                   <p>Employee Id: {employee.emp_id}</p>
                   <p>Name : {employee.emp_name}</p>

@@ -16,13 +16,9 @@ import { AuthContext} from '../AuthProvider';
 import {useNavigate } from 'react-router-dom'
 
 import Navbar2 from '../Navbar/Navbar2';
-
-
 import Navbar3 from '../Navbar3Design/Navbar3'
 
-
-import Navbar4 from '../Navbar4/Navbar4'
-
+import Navbar5 from '../Navbar5/Navbar5';
 import NavbarOrig from '../Navbar/NavbarOrig';
 
 
@@ -48,10 +44,11 @@ const handleLogout =()=>{
     <>
     <div className="my-nav">
       
-      <NavbarOrig/>
-      <Navbar2 theme = {theme} setTheme={setTheme}/>
-      {/* <Navbar3 /> */}
-      {/* <Navbar4 /> */}
+      {/* <NavbarOrig/> */}
+      {/* <Navbar2 theme = {theme} setTheme={setTheme}/> */}
+      <Navbar3 />
+      
+      
       
 
      

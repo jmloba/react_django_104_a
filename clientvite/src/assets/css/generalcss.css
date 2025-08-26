@@ -20,7 +20,8 @@ body{
   
 } */
 .navbar{
-  background-color: brown;
+  
+  background-color: rgb(221, 200, 200);
   padding:.5em 1em;
 } 
 .bg-light-dark{
@@ -202,17 +203,8 @@ label.form-text.dark{
 }
  /* content retreived display */
 
-.data-list.light{
-  display : flex;
-  
 
-  justify-content: center;
-}
-.data-list.dark{
-  display : flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 .employee-card-image {
   display:flex;
   margin : auto;
@@ -220,8 +212,20 @@ label.form-text.dark{
 .employee-card-image img{
   width : 10em;
 }
-.data-list{
-  display: flex;
+
+/* .data-list.light{
+  display : flex;
+   justify-content: center;
+}
+.data-list.dark{
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.data-list li.card{
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 .data-list .card .card-title{
   color : red;
@@ -316,4 +320,33 @@ label.form-text.dark{
 }
 .row.image{
   background-color: beige;
+}
+.form-area{
+  background-color:transparent;
+  background-color:burlywood;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+
+}
+form{
+  width:80%;
+  padding : 1rem 2rem;
+  
+  background-color: antiquewhite;
+  border-color: none;
+}
+ul{
+  list-style : none;
+  margin:0;
+  padding : 0;
+}
+a{
+  color : var(--text-color);
+  text-decoration: none;
 }

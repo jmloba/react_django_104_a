@@ -50,6 +50,8 @@ const DepartmentAdd = ({departments,setDepartments,setShowDepartmentAdd}) => {
   }
   return (
     <>
+    
+    <div className="form-area">
     <h4>Add Department routine</h4>
     <form onSubmit={handleSaveForm}>
       <div className="form-data">
@@ -75,6 +77,8 @@ const DepartmentAdd = ({departments,setDepartments,setShowDepartmentAdd}) => {
         )
       }
     </form>
+
+    </div>
     </>
     
   )

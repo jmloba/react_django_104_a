@@ -1,27 +1,47 @@
+
 export const menuItemsData=[
   {
-    title:'Home'
+    title:'Home',
+    url:'/'
   },
   {
     title:'Tutorial',
     submenu:[
-      {title:'HTML'},
-      {title:'JS Framework',
+      {title:'Dashboard', url:'/dashboard'},
+      {title:'Department', url:'/department'},
+
+      {title:'Project',
       submenu:[
-      {title:'Angular'},
-      { title:'React',
-        submenu :[
-          {title : 'React JS'},
-          {title : 'React Material UI'}
-        ]
-
+      {title:'View Project', url:'/app_project'},
+      ]
       },
-      {title:'JS Framework 3'},
-    ]
 
-
+      {title:'Employee',
+      submenu:[
+      {title:'View List Employee', url:'/employees'},
+      ]
       },
-      {title:'CSS'},
+
+      {title:'Books',
+      submenu:[
+      {title:'View List Books', url:'/books'},
+      {title:'Add Books', url:'/books-add'},
+      ]
+      },
+
+
+      // {title:'Employee',
+      //   submenu:[
+      //   {title:'View Employee', url:'/employees'},
+      //   {title:'Project',
+      //     submenu :[
+      //       {title : 'Project List', url:'/app_project'},
+      //       // {title : 'React Material UI'}
+      //             ]
+      //   },
+      //   ]
+      // },
+      
     ]
   
   },
@@ -35,9 +55,9 @@ export const menuItemsData=[
     ]
   },
 
-    {
-    title:'Logout'
-  },
+  //   {
+  //   title:'Logout',url:'/logout'
+  // },
 
 
 ]

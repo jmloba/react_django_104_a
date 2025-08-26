@@ -120,7 +120,7 @@ const EmployeeAddGreatAdib = () => {
           </div>
 
 {/* ----  sample to call reusable input =========  */}
-          <div className="input-flex">
+          {/* <div className="input-flex">
             <form className={`form ${theme}`}>
             
               <Input 
@@ -137,10 +137,9 @@ const EmployeeAddGreatAdib = () => {
               <button onClick={handleSubmitButton}>submit</button>
 
             </form>
-          </div>
+          </div> */}
 {/* ⇈⇈⇈  ---- sample to call reusable input =========  */}
-
-
+          <div className="form-area">
           <form className={`form ${theme}`} onSubmit={handleSaveForm}>
             <div className={`form-data ${theme}`} >
               <div className="form-group form-control">
@@ -231,6 +230,9 @@ const EmployeeAddGreatAdib = () => {
             }
           
           </form>
+
+          </div>
+
 
       </div>
     </div>
